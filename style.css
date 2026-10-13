@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    color: black;
+}
+
+header {
+    background-color: lightblue;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.contact-form label {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="number"],
+.contact-form input[type="date"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* =========================================================
+   1. التجاوب مع الشاشات (Responsive Breakpoints: Tablet & Desktop)
+   ========================================================= */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* الموبايل: عمود واحد */
+    gap: 15px;
+}
+
+/* تابلت (2 columns) */
+@media (min-width: 768px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ديسكتوب (3 columns) */
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================================
+   2. دعم الوضع الداكن (Dark Mode)
+   ========================================================= */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+    
+    .card, .form-group, input, select, textarea, .modal-content {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #444444;
+    }
+}
+
+
+/* =========================================================
+   3. مكونات صفحة Components (Alerts & Pure CSS Modal)
+   ========================================================= */
+
+/* التنبيهات (Alerts) */
+.alert {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.alert-success { background-color: #d4edda; color: #155724; }
+.alert-warning { background-color: #fff3cd; color: #856404; }
+.alert-danger  { background-color: #f8d7da; color: #721c24; }
+
+/* النافذة المنبثقة (CSS-Only Modal) */
+.modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* مخفية افتراضياً */
+    justify-content: center;
+    align-items: center;
+}
+
+/* تظهر فقط عند فتح الرابط المخصص لها بـ CSS */
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+}
